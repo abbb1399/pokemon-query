@@ -13,7 +13,9 @@ function MainNavigation(): JSX.Element {
           <li>
             <Link to="/my-pokemons">
               My Pokemons
-              <span className={classes.badge}>1</span>
+              <span className={classes.badge}>
+                1
+              </span>
             </Link>
           </li>
         </ul>

@@ -4,9 +4,7 @@ import Card from "../ui/Card"
 import classes from "./PokemonItem.module.css"
 import PokemonData from "../../models/pokemon-data"
 
-
-function PokemonItem({image, name, order}: PokemonData ): JSX.Element {
-
+function PokemonItem({ image, name, order }: PokemonData): JSX.Element {
   return (
     <li className={classes.item}>
       <Card>
@@ -19,9 +17,7 @@ function PokemonItem({image, name, order}: PokemonData ): JSX.Element {
             <p>{name}</p>
           </div>
           <div className={classes.actions}>
-            <button>
-              catch {name} !
-            </button>
+            <button>catch {name} !</button>
           </div>
         </section>
       </Card>

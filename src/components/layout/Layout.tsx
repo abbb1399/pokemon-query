@@ -1,8 +1,8 @@
+import React from "react"
 import MainNavigation from "./MainNavigation"
-import Children from "../../models/children"
 import classes from "./Layout.module.css"
 
-function Layout({ children }: Children): JSX.Element {
+function Layout({ children }: { children: React.ReactNode }): JSX.Element {
   return (
     <div>
       <MainNavigation />

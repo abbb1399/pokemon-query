@@ -1,7 +1,7 @@
+import React from "react"
 import classes from "./Card.module.css"
-import Children from "../../models/children"
 
-function Card({ children }: Children): JSX.Element {
+function Card({ children }: { children: React.ReactNode }): JSX.Element {
   return (
     <div className={classes.card}>
       {children}

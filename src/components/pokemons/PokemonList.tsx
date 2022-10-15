@@ -2,13 +2,13 @@ import React from "react"
 
 import PokemonItem from "./PokemonItem"
 import classes from "./PokemonList.module.css"
-import PokemonData from '../../models/pokemon-data'
+import PokemonData from "../../models/pokemon-data"
 
-interface PokemonListProps{
+interface PokemonListProps {
   pokemons: PokemonData[]
 }
 
-function PokemonList({pokemons}:PokemonListProps): JSX.Element{
+function PokemonList({ pokemons }: PokemonListProps): JSX.Element {
   return (
     <ul className={classes.list}>
       {pokemons.map((pokemon) => (

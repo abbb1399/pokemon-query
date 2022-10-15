@@ -7,12 +7,12 @@ interface PokemonSearchProps {
   onSerachPokemon: (enteredId: number) => void
 }
 
-function PokemonSearch({onSerachPokemon}:PokemonSearchProps): JSX.Element {
+function PokemonSearch({ onSerachPokemon }: PokemonSearchProps): JSX.Element {
   const pokeIdRef = useRef<HTMLInputElement>(null)
 
-  function submitHandler(e: React.FormEvent){
+  function submitHandler(e: React.FormEvent) {
     e.preventDefault()
-    const enteredId = parseInt(pokeIdRef.current!.value) 
+    const enteredId = parseInt(pokeIdRef.current!.value)
 
     onSerachPokemon(enteredId)
   }
@@ -26,7 +26,7 @@ function PokemonSearch({onSerachPokemon}:PokemonSearchProps): JSX.Element {
             <input
               type="number"
               required
-              min={0}
+              min={1}
               id="poke-id"
               placeholder="Search a Pokemon"
               ref={pokeIdRef}

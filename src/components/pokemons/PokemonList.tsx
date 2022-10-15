@@ -15,7 +15,6 @@ function PokemonList({ pokemons }: PokemonListProps): JSX.Element {
           id={pokemon.id}
           image={pokemon.image}
           name={pokemon.name}
-          order={pokemon.order}
         />
       ))}
     </ul>

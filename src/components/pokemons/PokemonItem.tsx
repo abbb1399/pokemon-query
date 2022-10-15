@@ -5,7 +5,7 @@ import classes from "./PokemonItem.module.css"
 import PokemonData from "../../models/pokemon-data"
 import MyPokemonsContext from "../../store/my-pokemons-context"
 
-function PokemonItem({ id, image, name, order }: PokemonData): JSX.Element {
+function PokemonItem({ id, image, name }: PokemonData): JSX.Element {
   const myPokemonsCtx = useContext(MyPokemonsContext)
 
   const isFavorite = myPokemonsCtx!.pokemonIsCatched(id)
@@ -14,7 +14,7 @@ function PokemonItem({ id, image, name, order }: PokemonData): JSX.Element {
     if (isFavorite) {
       myPokemonsCtx!.releasePokemon(id)
     } else {
-      myPokemonsCtx!.catchPokemon({id, image, name, order})
+      myPokemonsCtx!.catchPokemon({id, image, name})
     }
   }
 
@@ -25,7 +25,7 @@ function PokemonItem({ id, image, name, order }: PokemonData): JSX.Element {
           <img src={image} alt={name} />
         </div>
         <div className={classes.content}>
-          <h3># {order}</h3>
+          <h3># {id}</h3>
           <p>{name}</p>
         </div>
         <div className={classes.actions}>

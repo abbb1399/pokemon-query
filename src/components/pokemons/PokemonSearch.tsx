@@ -25,7 +25,10 @@ function PokemonSearch({ onSerachPokemon, onErrorModal }: PokemonSearchProps): J
       return
     }
 
+    
     onSerachPokemon(enteredId)
+    pokeIdRef.current!.value = ""
+    pokeIdRef.current!.focus()
   }
 
   return (
@@ -36,6 +39,7 @@ function PokemonSearch({ onSerachPokemon, onErrorModal }: PokemonSearchProps): J
             <label htmlFor="poke-id">Search a Pokemon by ID</label>
             <input
               type="number"
+              autoComplete="off"
               required
               min={1}
               id="poke-id"

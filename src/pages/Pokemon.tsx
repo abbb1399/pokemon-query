@@ -17,12 +17,11 @@ function Pokemon(): JSX.Element {
       .then((response) => {
         return response.json()
       })
-      .then(({ id, sprites, name, order }) => {
+      .then(({ id, sprites, name }) => {
         const pokemonData: PokemonData = {
           id,
           image: sprites.front_default,
-          name,
-          order,
+          name
         }
 
         setIsLoading(false)
@@ -45,13 +44,13 @@ function Pokemon(): JSX.Element {
     setError(null)
   }
 
-  if (isLoading) {
-    return (
-      <section>
-        <p>Loading...</p>
-      </section>
-    )
-  }
+  // if (isLoading) {
+  //   return (
+  //     <section>
+  //       <p>Loading...</p>
+  //     </section>
+  //   )
+  // }
 
   return (
     <Fragment>

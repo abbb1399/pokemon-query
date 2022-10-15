@@ -14,12 +14,12 @@ function Pokemon(): JSX.Element {
       .then((response) => {
         return response.json()
       })
-      .then((data) => {
-        const pokemonData = {
-          id: data.id,
-          image: data.sprites.front_default,
-          name: data.name,
-          order: data.order,
+      .then(({id, sprites, name, order}) => {
+        const pokemonData: PokemonData = {
+          id,
+          image: sprites.front_default,
+          name,
+          order
         }
 
         setIsLoading(false)

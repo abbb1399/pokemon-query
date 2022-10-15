@@ -1,8 +1,12 @@
-import React from "react"
+import { useContext } from "react"
 import { Link } from "react-router-dom"
+
 import classes from "./MainNavigation.module.css"
+import MyPokemonsContext from "../../store/my-pokemons-context"
 
 function MainNavigation(): JSX.Element {
+  const myPokemonsCtx = useContext(MyPokemonsContext)
+ 
   return (
     <header className={classes.header}>
       <div className={classes.logo}>Pokemon Query</div>
@@ -15,7 +19,7 @@ function MainNavigation(): JSX.Element {
             <Link to="/my-pokemons">
               My Pokemons
               <span className={classes.badge}>
-                1
+                {myPokemonsCtx!.totalMyPokemons}
               </span>
             </Link>
           </li>

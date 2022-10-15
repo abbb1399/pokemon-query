@@ -24,7 +24,6 @@ function Pokemon(): JSX.Element {
 
         setIsLoading(false)
         setLoadedPokemon([pokemonData])
-        console.log(pokemonData)
       })
   }
 

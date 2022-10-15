@@ -1,5 +1,3 @@
-import React from "react"
-
 import PokemonItem from "./PokemonItem"
 import classes from "./PokemonList.module.css"
 import PokemonData from "../../models/pokemon-data"

@@ -12,7 +12,7 @@ interface MyPokemonsContextInterface {
 
 const MyPokemonsContext = createContext<MyPokemonsContextInterface | null>(null)
 
-function MyPokemonsContextProvider({ children }: { children: React.ReactNode }): JSX.Element{
+export function MyPokemonsContextProvider({ children }: { children: React.ReactNode }): JSX.Element{
   const [myPokemons, setMyPokemons] = useState<PokemonData[]>([])
 
   function catchPokemonHandler(pokemon: PokemonData){
@@ -31,7 +31,7 @@ function MyPokemonsContextProvider({ children }: { children: React.ReactNode }):
     return myPokemons.some((pokemon) => pokemon.id === pokemonId)
   }
 
-  const context: MyPokemonsContextInterface= {
+  const context: MyPokemonsContextInterface = {
     myPokemons: myPokemons,
     totalMyPokemons: myPokemons.length,
     catchPokemon: catchPokemonHandler,
@@ -46,4 +46,4 @@ function MyPokemonsContextProvider({ children }: { children: React.ReactNode }):
   )
 }
 
-export default MyPokemonsContextProvider
+export default MyPokemonsContext

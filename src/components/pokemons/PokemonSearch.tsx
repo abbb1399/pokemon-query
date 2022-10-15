@@ -4,7 +4,7 @@ import Card from "../ui/Card"
 import classes from "./PokemonSearch.module.css"
 
 interface PokemonSearchProps {
-  onSerachPokemon: (enteredId: string) => void
+  onSerachPokemon: (enteredId: number) => void
 }
 
 function PokemonSearch({onSerachPokemon}:PokemonSearchProps): JSX.Element {
@@ -12,7 +12,7 @@ function PokemonSearch({onSerachPokemon}:PokemonSearchProps): JSX.Element {
 
   function submitHandler(e: React.FormEvent){
     e.preventDefault()
-    const enteredId = pokeIdRef.current!.value
+    const enteredId = parseInt(pokeIdRef.current!.value) 
 
     onSerachPokemon(enteredId)
   }

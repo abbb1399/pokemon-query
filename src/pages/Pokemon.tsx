@@ -1,13 +1,14 @@
 import React, { Fragment, useState } from "react"
 
 import PokemonSearch from "../components/pokemons/PokemonSearch"
+import PokemonList from "../components/pokemons/PokemonList"
 import PokemonData from "../models/pokemon-data"
 
 function Pokemon(): JSX.Element {
   const [isLoading, setIsLoading] = useState<Boolean>(false)
   const [loadedPokemon, setLoadedPokemon] = useState<PokemonData[]>([])
 
-  const searchPokemonHandler = (pokeId: string) => {
+  const searchPokemonHandler = (pokeId: number) => {
     setIsLoading(true)
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokeId}`)
       .then((response) => {
@@ -38,6 +39,7 @@ function Pokemon(): JSX.Element {
   return (
     <Fragment>
       <PokemonSearch onSerachPokemon={searchPokemonHandler} />
+      {loadedPokemon &&< PokemonList pokemons={loadedPokemon}/>}
     </Fragment>
   )
 }

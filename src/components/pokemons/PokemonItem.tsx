@@ -4,17 +4,21 @@ import Card from "../ui/Card"
 import classes from "./PokemonItem.module.css"
 import PokemonData from "../../models/pokemon-data"
 import MyPokemonsContext from "../../store/my-pokemons-context"
+import JSConfetti from 'js-confetti'
 
 function PokemonItem({ id, image, name }: PokemonData): JSX.Element {
   const myPokemonsCtx = useContext(MyPokemonsContext)
-
+  
   const isFavorite = myPokemonsCtx!.pokemonIsCatched(id)
-
+  
   const toggleCatchStatusHandler = () => {
+    
     if (isFavorite) {
       myPokemonsCtx!.releasePokemon(id)
     } else {
+      const jsConfetti = new JSConfetti()
       myPokemonsCtx!.catchPokemon({id, image, name})
+      jsConfetti.addConfetti()
     }
   }
 

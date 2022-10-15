@@ -5,6 +5,7 @@ import PokemonList from "../components/pokemons/PokemonList"
 import PokemonData from "../models/pokemon-data"
 import ErrorMessages from "../models/error-messages"
 import ErrorModal from "../components/ui/ErrorModal"
+import Spinner from "../components/ui/Spinner"
 
 function Pokemon(): JSX.Element {
   const [error, setError] = useState<ErrorMessages | null>()
@@ -28,11 +29,12 @@ function Pokemon(): JSX.Element {
         setLoadedPokemon([pokemonData])
       })
       .catch((err) => {
-        setIsLoading(false)
-        setError({
+        setErrorMessageHandler({
           title: "Error!",
           message: "Sorry man. You sure you got the right pokemon id?",
         })
+        setLoadedPokemon([])
+        setIsLoading(false)
       })
   }
 
@@ -43,14 +45,6 @@ function Pokemon(): JSX.Element {
   function errorHandler() {
     setError(null)
   }
-
-  // if (isLoading) {
-  //   return (
-  //     <section>
-  //       <p>Loading...</p>
-  //     </section>
-  //   )
-  // }
 
   return (
     <Fragment>
@@ -65,7 +59,8 @@ function Pokemon(): JSX.Element {
         onSerachPokemon={searchPokemonHandler}
         onErrorModal={setErrorMessageHandler}
       />
-      {loadedPokemon && <PokemonList pokemons={loadedPokemon} />}
+      {!isLoading && <PokemonList pokemons={loadedPokemon} />}
+      {isLoading && <Spinner/>}
     </Fragment>
   )
 }

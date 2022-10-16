@@ -1,4 +1,4 @@
-import React, { useRef, Fragment } from "react"
+import { FormEvent, useRef, Fragment } from "react"
 
 import Card from "../ui/Card"
 import classes from "./PokemonSearch.module.scss"
@@ -16,7 +16,7 @@ function PokemonSearch({
 }: PokemonSearchProps): JSX.Element {
   const pokeIdRef = useRef<HTMLInputElement>(null)
 
-  function submitHandler(e: React.FormEvent) {
+  function submitHandler(e: FormEvent) {
     e.preventDefault()
     const enteredId = parseInt(pokeIdRef.current!.value)
 

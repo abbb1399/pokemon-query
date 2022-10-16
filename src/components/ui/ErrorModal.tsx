@@ -9,11 +9,11 @@ interface ModalProps {
   onConfirm: () => void
 }
 
-function Backdrop({ onConfirm }: ModalProps) {
+function Backdrop({ onConfirm }: ModalProps): JSX.Element {
   return <div className={classes.backdrop} onClick={onConfirm} />
 }
 
-function ModalOverlay({ title, message, onConfirm }: ModalProps) {
+function ModalOverlay({ title, message, onConfirm }: ModalProps): JSX.Element {
   return (
     <div className={classes.modal}>
       <header className={classes.header}>

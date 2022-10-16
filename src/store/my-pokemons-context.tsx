@@ -1,4 +1,4 @@
-import React, {createContext, useState} from 'react'
+import {ReactNode, createContext, useState} from 'react'
 
 import PokemonData from '../models/pokemon-data'
 import JSConfetti from 'js-confetti'
@@ -14,7 +14,7 @@ interface MyPokemonsContextInterface {
 
 const MyPokemonsContext = createContext<MyPokemonsContextInterface | null>(null)
 
-export function MyPokemonsContextProvider({ children }: { children: React.ReactNode }): JSX.Element{
+export function MyPokemonsContextProvider({ children }: { children: ReactNode }): JSX.Element{
   const [myPokemons, setMyPokemons] = useState<PokemonData[]>([])
 
   function catchPokemonHandler(pokemon: PokemonData){

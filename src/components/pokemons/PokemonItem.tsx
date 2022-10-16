@@ -8,11 +8,12 @@ import MyPokemonsContext from "../../store/my-pokemons-context"
 function PokemonItem({ id, image, name }: PokemonData): JSX.Element {
   const myPokemonsCtx = useContext(MyPokemonsContext)
   
-  const isFavorite = myPokemonsCtx!.pokemonIsCatched(id)
+  const isCathed = myPokemonsCtx!.pokemonIsCatched(id)
   
+  const badgeClasses = `${classes.button} ${isCathed ? classes.active : ''}`
+ 
   const toggleCatchStatusHandler = () => {
-    
-    if (isFavorite) {
+    if (isCathed) {
       myPokemonsCtx!.releasePokemon(id)
     } else {
       myPokemonsCtx!.catchPokemon({id, image, name})
@@ -27,11 +28,11 @@ function PokemonItem({ id, image, name }: PokemonData): JSX.Element {
         </div>
         <div className={classes.content}>
           <h3># {id}</h3>
-          <p>{name}</p>
+          <p>{name} {isCathed && "cactched"}</p>
         </div>
         <div className={classes.actions}>
-          <button onClick={toggleCatchStatusHandler}>
-            {isFavorite ? "Release" : `Catch`} {name} !
+          <button onClick={toggleCatchStatusHandler} className={badgeClasses}>
+            {isCathed ? "Release" : `Catch`} {name} !
           </button>
         </div>
       </Card>

@@ -9,11 +9,13 @@ function MainNavigation(): JSX.Element {
  
   return (
     <header className={classes.header}>
-      <div className={classes.logo}>Pokemon Query</div>
-      <nav>
+      <div className={classes.logo}>
+        <Link to="/">Pokemon Query</Link>  
+      </div>
+      <nav className={classes.nav}>
         <ul>
           <li>
-            <Link to="/">Search Pokemon</Link>
+            <Link to="/search">Search Pokemon</Link>
           </li>
           <li>
             <Link to="/my-pokemons">

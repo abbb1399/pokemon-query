@@ -2,7 +2,7 @@
 
 포켓몬을 검색하고 맘에드는 포켓몬을 잡을(찜하기) 수 있는 앱입니다.<br>
 검색한 포켓몬을 Catch 버튼을 통해서 잡을 수 있습니다.<br>
-잡힌 포켓몬은 MyPokemons Pages에서 확인 가능합니다.
+잡힌 포켓몬은 MyPokemons Page에서 확인 가능합니다.
 
 ## 기술 스택
 * 개발 언어: TypeScript, HTML, Sass(SCSS)

@@ -3,14 +3,17 @@ import React, { useRef, Fragment } from "react"
 import Card from "../ui/Card"
 import classes from "./PokemonSearch.module.scss"
 
-import ErrorMessages from '../../models/error-messages'
+import ErrorMessages from "../../models/error-messages"
 
 interface PokemonSearchProps {
-  onSerachPokemon: (enteredId: number) => void,
+  onSerachPokemon: (enteredId: number) => void
   onErrorModal: (errorMessages: ErrorMessages) => void
 }
 
-function PokemonSearch({ onSerachPokemon, onErrorModal }: PokemonSearchProps): JSX.Element {
+function PokemonSearch({
+  onSerachPokemon,
+  onErrorModal,
+}: PokemonSearchProps): JSX.Element {
   const pokeIdRef = useRef<HTMLInputElement>(null)
 
   function submitHandler(e: React.FormEvent) {
@@ -20,7 +23,7 @@ function PokemonSearch({ onSerachPokemon, onErrorModal }: PokemonSearchProps): J
     if (enteredId < 1) {
       onErrorModal({
         title: "Invalid Number",
-        message: "Please enter a valid number (should be grater than zero)."
+        message: "Please enter a valid number (should be grater than zero).",
       })
       return
     }
@@ -34,19 +37,17 @@ function PokemonSearch({ onSerachPokemon, onErrorModal }: PokemonSearchProps): J
     <Fragment>
       <Card>
         <form className={classes.form} onSubmit={submitHandler}>
-          <div className={classes.control}>
-            <label htmlFor="poke-id">Search a Pokemon by ID</label>
+          <label htmlFor="poke-id">Search Pokemons by ID</label>
+          <div className={classes.actions}>
             <input
               type="number"
               autoComplete="off"
               required
               min={1}
               id="poke-id"
-              placeholder="Search a Pokemon"
+              placeholder="Enter a Pokemon ID"
               ref={pokeIdRef}
             />
-          </div>
-          <div className={classes.actions}>
             <button>Search</button>
           </div>
         </form>

@@ -14,6 +14,10 @@
     justify-content: center;
   }
 
+  @media screen and (max-width: 400px) {
+    padding: 3rem 0;
+  }
+
   .logo {
     font-size: 2rem;
     color: white;
@@ -34,16 +38,26 @@
       margin-top: 0.4rem;
     }
 
+    @media screen and (max-width: 400px) {
+      width: 100%;
+    }
+
     ul {
       list-style: none;
       margin: 0;
       padding: 0;
       display: flex;
+      justify-content: space-around;
       align-items: baseline;
     }
 
     li {
       margin-left: 3rem;
+
+      @media screen and (max-width: 400px) {
+        margin-top: 0.5rem;
+        margin-left: 0;
+      }
     }
 
     a {
@@ -56,7 +70,7 @@
       }
 
       &:hover,
-      &:active{
+      &:active {
         color: $tertiary-color;
       }
     }
@@ -67,7 +81,7 @@
       border-radius: 12px;
       padding: 0 1rem;
       margin-left: 0.5rem;
-    }
+    }    
   }
 }
 

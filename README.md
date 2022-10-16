@@ -19,4 +19,3 @@
 ### `npm start`
 
 개발자 모드로 실행하기
-[http://localhost:3000]

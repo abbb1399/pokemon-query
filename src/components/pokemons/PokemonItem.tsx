@@ -1,10 +1,9 @@
 import { useContext } from "react"
 
 import Card from "../ui/Card"
-import classes from "./PokemonItem.module.css"
+import classes from "./PokemonItem.module.scss"
 import PokemonData from "../../models/pokemon-data"
 import MyPokemonsContext from "../../store/my-pokemons-context"
-import JSConfetti from 'js-confetti'
 
 function PokemonItem({ id, image, name }: PokemonData): JSX.Element {
   const myPokemonsCtx = useContext(MyPokemonsContext)
@@ -16,9 +15,7 @@ function PokemonItem({ id, image, name }: PokemonData): JSX.Element {
     if (isFavorite) {
       myPokemonsCtx!.releasePokemon(id)
     } else {
-      const jsConfetti = new JSConfetti()
       myPokemonsCtx!.catchPokemon({id, image, name})
-      jsConfetti.addConfetti()
     }
   }
 

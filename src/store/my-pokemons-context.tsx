@@ -1,6 +1,8 @@
 import React, {createContext, useState} from 'react'
 
 import PokemonData from '../models/pokemon-data'
+import JSConfetti from 'js-confetti'
+const jsConfetti = new JSConfetti()
 
 interface MyPokemonsContextInterface {
   myPokemons: PokemonData[]
@@ -19,6 +21,7 @@ export function MyPokemonsContextProvider({ children }: { children: React.ReactN
     setMyPokemons((prevMyPokemons) => {
       return prevMyPokemons.concat(pokemon)
     })
+    jsConfetti.addConfetti()
   }
 
   function releasePokemonHandler(pokemonId : number) {

@@ -1,5 +1,5 @@
 import PokemonItem from "./PokemonItem"
-import classes from "./PokemonList.module.css"
+import classes from "./PokemonList.module.scss"
 import PokemonData from "../../models/pokemon-data"
 
 interface PokemonListProps {

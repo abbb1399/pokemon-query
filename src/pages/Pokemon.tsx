@@ -7,6 +7,7 @@ import ErrorMessages from "../models/error-messages"
 import ErrorModal from "../components/ui/ErrorModal"
 import Spinner from "../components/ui/Spinner"
 
+
 function Pokemon(): JSX.Element {
   const [error, setError] = useState<ErrorMessages | null>()
   const [isLoading, setIsLoading] = useState<Boolean>(false)

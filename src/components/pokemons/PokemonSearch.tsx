@@ -1,7 +1,7 @@
 import React, { useRef, Fragment } from "react"
 
 import Card from "../ui/Card"
-import classes from "./PokemonSearch.module.css"
+import classes from "./PokemonSearch.module.scss"
 
 import ErrorMessages from '../../models/error-messages'
 
@@ -25,7 +25,6 @@ function PokemonSearch({ onSerachPokemon, onErrorModal }: PokemonSearchProps): J
       return
     }
 
-    
     onSerachPokemon(enteredId)
     pokeIdRef.current!.value = ""
     pokeIdRef.current!.focus()

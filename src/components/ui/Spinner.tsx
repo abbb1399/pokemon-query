@@ -1,4 +1,4 @@
-import classes from "./Spinner.module.css"
+import classes from "./Spinner.module.scss"
 
 function Spinner():JSX.Element{
   return(

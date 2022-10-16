@@ -1,7 +1,7 @@
 import React from "react"
 import ReactDOM from "react-dom"
 
-import classes from "./ErrorModal.module.css"
+import classes from "./ErrorModal.module.scss"
 
 interface ModalProps {
   title?: string
@@ -37,7 +37,10 @@ function ErrorModal({ title, message, onConfirm }: ModalProps) {
 
   return (
     <React.Fragment>
-      {ReactDOM.createPortal(<Backdrop onConfirm={onConfirm} />, backdropRoot)}
+      {ReactDOM.createPortal(
+        <Backdrop onConfirm={onConfirm} />,
+        backdropRoot
+      )}
       {ReactDOM.createPortal(
         <ModalOverlay title={title} message={message} onConfirm={onConfirm} />,
         overlayRoot

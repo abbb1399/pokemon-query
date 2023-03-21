@@ -2,7 +2,7 @@
 
 포켓몬을 검색하고 맘에드는 포켓몬을 잡을 수 있는 앱입니다.<br>
 검색한 포켓몬을 Catch/Release 버튼을 통해서 잡고/풀어 줄수 있습니다.<br>
-잡힌 포켓몬은 MyPokemons Page에서 확인 가능합니다.<br><br>
+잡힌 포켓몬은 MyPokemons Page에서 확인 가능합니다.<br>
 https://rad-arithmetic-ddea40.netlify.app
 
 ## 기술 스택
